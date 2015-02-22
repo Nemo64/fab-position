@@ -1,0 +1,51 @@
+<link rel="import" href="../polymer/polymer.html"/>
+
+<polymer-element name="fab-position" attributes="mode">
+    <template>
+        <style>
+            /*
+             * the different margins are from the material guidelines found here:
+             * http://www.google.com/design/spec/components/buttons.html#buttons-floating-action-button
+             */
+            @media (min-width: 640px) {
+                #position {
+                    margin: 24px;
+                }
+            }
+            @media (max-width: 639px) {
+                #position {
+                    margin: 16px;
+                }
+            }
+            #position {
+                position: absolute;
+                z-index: 100;
+            }
+            #position.floating {
+                right: 0;
+                bottom: 0;
+            }
+            #position.bottom-overflow {
+                left: 0;
+                bottom: -50%;
+                margin-bottom: 0;
+            }
+            #position.top-overflow {
+                right: 0;
+                top: -50%;
+                margin-top: 0;
+            }
+            :host {
+                margin: 0 !important; /* remove margin given by toolbars */
+            }
+        </style>
+        <div id="position" class="{{mode}}">
+            <content></content>
+        </div>
+    </template>
+    <script>
+        Polymer({
+
+        });
+    </script>
+</polymer-element>

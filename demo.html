@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head lang="en">
+        <meta charset="UTF-8">
+
+        <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+        <title>fab-position element</title>
+        <script src="../webcomponentsjs/webcomponents.min.js"></script>
+
+        <link rel="import" href="fab-position.html"/>
+
+        <link rel="import" href="../paper-fab/paper-fab.html"/>
+        <link rel="import" href="../core-header-panel/core-header-panel.html"/>
+        <link rel="import" href="../core-toolbar/core-toolbar.html"/>
+
+        <style>
+            footer {
+                position: fixed;
+                bottom: 0;
+                width: 100%;
+                height: 48px;
+                border-top: 1px solid #ccc;
+            }
+            #example1 {
+                margin: 16px;
+                padding: 16px;
+                border: 1px solid #ccc;
+                width: 320px;
+                height: 320px;
+            }
+        </style>
+
+    </head>
+    <body fullbleed layout vertical unresolved>
+        <core-header-panel flex>
+            <core-toolbar>
+                <fab-position mode="bottom-overflow">
+                    <paper-fab icon="add"></paper-fab>
+                </fab-position>
+                <div flex>fab-position demo</div>
+            </core-toolbar>
+
+            <div id="content" fit layout grid>
+
+                <div id="example1" relative>
+
+                    <p>Here the button how it would float in a relative box.</p>
+
+                    <fab-position mode="floating">
+                        <paper-fab icon="add"></paper-fab>
+                    </fab-position>
+                </div>
+            </div>
+
+            <footer>
+                <fab-position mode="top-overflow">
+                    <paper-fab></paper-fab>
+                </fab-position>
+            </footer>
+        </core-header-panel>
+    </body>
+</html>
